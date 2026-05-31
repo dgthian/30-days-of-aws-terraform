@@ -1,9 +1,11 @@
-# 30-days-of-aws-terraform
+### day05: passing the variables in different ways
 
-# Alias
-'alias tf=terraform'
+# Valeur par défaut (Supprime ou renomme temporairement ton fichier terraform.tfvars)
+mv terraform.tfvars terraform.tfvars.bak
 
-# bash completion
-```sh
-touch ~/.bashrc
-```
+# Valeur dans terraform.tfvars
+
+environment = "demo"
+
+# Variable d'environnement
+export TF_VAR_environment=demo
