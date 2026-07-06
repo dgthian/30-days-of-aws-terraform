@@ -1,0 +1,31 @@
+title Architecture Diagram
+
+//cloud-architecture-diagram
+ 
+CSV for bulk creation [icon: excel, color: blue]
+Terraform [icon: terraform, color: purple]
+
+
+VPC [icon: aws-vpc, color: green] {
+  
+IAM Users [icon: aws-identity-and-access-management]
+S3 remote state [icon: aws-simple-storage-service]
+
+  IAM Group [color: red] {
+    Engineers [icon: user]
+    Managers [icon: user]
+    Educations [icon: user]
+  }
+  Key [icon: key, label: Login profiles]
+}
+Aws [icon: aws, label: Aws]
+
+
+// Define connections
+
+CSV for bulk creation > Terraform
+Terraform > IAM Users: Create Users
+IAM Users > Key
+IAM Users  > IAM Group: Dynamic assignment
+
+S3 remote state > Terraform
